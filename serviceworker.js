@@ -3,6 +3,8 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/style.css',
+    '/icons-192.png',
+    '/icons-512.png',
   ];
   
 
