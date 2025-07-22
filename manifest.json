@@ -1,9 +1,23 @@
 {
-  "name": "SEVER - Менеджер задач",
-  "short_name": "SEVER",
-  "description": "Приложение для управления задачами с различными приоритетами",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#f8f9fa",
-  "theme_color": "#0d6efd",
-}
+    "name": "ToDoList",
+    "short_name": "ToDoVershinin",
+    "start_url": "/index.html",
+
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#003366",
+    "description": "ToDoList",
+    "icons": [
+      {
+        "src": "icon-192.png",
+        "type": "/icons/icon-192.png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon-512.png",
+        "type": "/icons/icon-512.png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
