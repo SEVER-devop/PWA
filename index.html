@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>SEVER</title>
+    <style>
+        .completed-task .card-title {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .priority-high {
+            border-left: 4px solid #dc3545;
+        }
+        .priority-medium {
+            border-left: 4px solid #ffc107;
+        }
+        .priority-low {
+            border-left: 4px solid #28a745;
+        }
+        .filter-active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container my-4">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form name="toDoForm">
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-md-5">
+                            <input name="title" class="form-control" type="text" placeholder="Название задачи" required>
+                        </div>
+                        <div class="col-md-3">
+                            <input name="date" class="form-control" type="date" required>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="priority" class="form-select">
+                                <option value="high">Высокий</option>
+                                <option value="medium" selected>Средний</option>
+                                <option value="low">Низкий</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input name="color" type="color" class="form-control form-control-color" title="Выберите цвет">
+                                <span class="input-group-text">Цвет</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-9">
+                            <textarea name="description" class="form-control" placeholder="Описание задачи" rows="2"></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-primary w-100" onclick="addToDo()">
+                                Добавить
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h4 class="d-inline-block me-3 mb-0">Мои задачи</h4>
+                <div class="btn-group btn-group-sm me-2">
+                    <button id="sortDateBtn" class="btn btn-outline-secondary" onclick="sortTasks('date')">
+                        По дате
+                    </button>
+                    <button id="sortCreatedBtn" class="btn btn-outline-secondary" onclick="sortTasks('order')">
+                        По порядку
+                    </button>
+                </div>
+                <div class="btn-group btn-group-sm">
+                    <button id="filterAllBtn" class="btn btn-outline-primary filter-active" onclick="filterTasks('all')">
+                        Все
+                    </button>
+                    <button id="filterHighBtn" class="btn btn-outline-danger" onclick="filterTasks('high')">
+                        Высокий
+                    </button>
+                    <button id="filterMediumBtn" class="btn btn-outline-warning" onclick="filterTasks('medium')">
+                        Средний
+                    </button>
+                    <button id="filterLowBtn" class="btn btn-outline-success" onclick="filterTasks('low')">
+                        Низкий
+                    </button>
+                </div>
+            </div>
+            <button id="deleteSelectedBtn" class="btn btn-outline-danger" disabled onclick="deleteSelected()">
+                Удалить выбранные
+            </button>
+        </div>
+
+        <div id="tasksContainer" class="row g-3"></div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
