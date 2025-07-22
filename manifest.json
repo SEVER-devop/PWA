@@ -9,13 +9,13 @@
     "description": "ToDoList",
     "icons": [
       {
-        "src": "icon-192.png",
-        "type": "/icons/icon-192.png",
+        "src": "icon-192.ico",
+        "type": "/icons/icon-192.ico",
         "sizes": "192x192"
       },
       {
-        "src": "icon-512.png",
-        "type": "/icons/icon-512.png",
+        "src": "icon-512.ico",
+        "type": "/icons/icon-512.ico",
         "sizes": "512x512"
       }
     ]
